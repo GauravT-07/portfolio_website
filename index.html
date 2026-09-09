@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Gaurav Totla — Lead Software Engineer specializing in Python automation, backend services, CI/CD and DevOps."/>
+<title>Gaurav Totla — Lead Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080C14;--bg2:#0D1220;--bg3:#111927;--surface:#141E2E;--surface2:#1A2540;
+  --green:#00FF88;--green2:#00CC6A;--green-dim:rgba(0,255,136,.08);
+  --blue:#4D9FFF;--blue-dim:rgba(77,159,255,.1);
+  --text:#E8EDF5;--muted:#8494A8;--border:rgba(255,255,255,.07);
+  --border2:rgba(0,255,136,.2);--font-display:'Syne',sans-serif;--font-mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-display);line-height:1.6;overflow-x:hidden;cursor:none}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:1;opacity:.4}
+#cursor{position:fixed;width:12px;height:12px;background:var(--green);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s ease;mix-blend-mode:difference}
+#cursor-ring{position:fixed;width:36px;height:36px;border:1px solid var(--green);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .3s ease;opacity:.5}
+#progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--green),var(--blue));z-index:200;width:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:rgba(8,12,20,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-mono);font-size:.9rem;color:var(--green);letter-spacing:.05em}
+.nav-logo span{color:var(--muted)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a,.nav-cta{font-family:var(--font-mono);font-size:.78rem;text-decoration:none;letter-spacing:.1em;text-transform:uppercase}
+.nav-links a{color:var(--muted);transition:color .2s}.nav-links a:hover{color:var(--green)}
+.nav-cta{color:var(--green);border:1px solid var(--border2);padding:.4rem 1rem;border-radius:4px}.nav-cta:hover{background:var(--green-dim)}
+section{position:relative;z-index:2;padding:6rem 0}.container{max-width:1140px;margin:auto;padding:0 2rem}
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:5rem;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,136,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,.03) 1px,transparent 1px);background-size:50px 50px;pointer-events:none}
+.hero-glow{position:absolute;top:-20%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,255,136,.05),transparent 70%);pointer-events:none}
+.hero-tag{display:inline-block;font-family:var(--font-mono);font-size:.72rem;color:var(--green);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.5rem;padding:.3rem .8rem;border:1px solid var(--border2);border-radius:2px;background:var(--green-dim)}
+.hero-name{font-size:clamp(3rem,6vw,5.5rem);font-weight:800;line-height:1;margin-bottom:1rem;letter-spacing:-.02em}
+.hero-name .highlight{color:transparent;-webkit-text-stroke:1px var(--green)}
+.hero-role{font-family:var(--font-mono);font-size:1.1rem;color:var(--muted);margin-bottom:1.5rem}.typed{color:var(--green)}
+.hero-summary{font-size:1rem;color:var(--muted);line-height:1.8;max-width:540px;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary,.btn-secondary{font-family:var(--font-mono);font-size:.82rem;padding:.7rem 1.6rem;border-radius:4px;text-decoration:none;font-weight:700;letter-spacing:.05em;transition:all .2s}
+.btn-primary{background:var(--green);color:#000}.btn-primary:hover{background:var(--green2);transform:translateY(-2px)}
+.btn-secondary{color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{border-color:var(--border2);color:var(--green);transform:translateY(-2px)}
+.hero-socials{display:flex;gap:1.2rem;margin-top:2rem}.hero-socials a{font-family:var(--font-mono);font-size:.75rem;color:var(--muted);text-decoration:none;letter-spacing:.1em}.hero-socials a:hover{color:var(--green)}
+.terminal{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;font-family:var(--font-mono)}
+.terminal-bar{background:var(--surface2);padding:.7rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid var(--border)}
+.dot{width:10px;height:10px;border-radius:50%}.dot.r{background:#FF5F57}.dot.y{background:#FFBD2E}.dot.g{background:#28CA41}
+.terminal-title{font-size:.72rem;color:var(--muted);margin-left:.5rem;letter-spacing:.05em}.terminal-body{padding:1.5rem;font-size:.82rem;line-height:2}
+.t-comment{color:#4A6080}.t-key{color:var(--blue)}.t-val{color:var(--green)}.t-str{color:#FFB86C}.t-num{color:#BD93F9}
+.t-cursor{display:inline-block;width:8px;height:1em;background:var(--green);vertical-align:middle;animation:blink 1s step-end infinite}@keyframes blink{50%{opacity:0}}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-top:4rem}
+.stat-item{background:var(--bg);padding:1.5rem 2rem;text-align:center}.stat-num{font-family:var(--font-mono);font-size:2.2rem;font-weight:700;color:var(--green);line-height:1;margin-bottom:.3rem}.stat-label{font-size:.8rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.section-header{margin-bottom:3.5rem}.section-tag{font-family:var(--font-mono);font-size:.72rem;color:var(--green);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem}
+.section-title{font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.02em;line-height:1.1}.section-title em{color:var(--green);font-style:normal}
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start}.about-text p{color:var(--muted);line-height:1.9;margin-bottom:1.2rem;font-size:.97rem}.about-text strong{color:var(--text)}
+.cert-list{margin-top:2rem}.cert-item{display:flex;align-items:center;gap:.8rem;padding:.7rem 0;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.8rem;color:var(--muted)}.cert-item::before{content:'✦';color:var(--green);font-size:.7rem}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.4rem 1.5rem;transition:all .3s}.skill-card:hover{border-color:var(--border2);background:var(--surface2);transform:translateY(-3px)}
+.skill-card-title{font-family:var(--font-mono);font-size:.7rem;color:var(--green);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.8rem}.skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}.skill-tag{font-family:var(--font-mono);font-size:.72rem;color:var(--text);background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:3px;padding:.2rem .6rem}.skill-tag.primary{color:var(--green);background:var(--green-dim);border-color:var(--border2)}
+.exp-timeline{position:relative;padding-left:2rem}.exp-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.exp-item{position:relative;margin-bottom:3rem;padding-left:2rem}.exp-item::before{content:'';position:absolute;left:-2rem;top:.5rem;width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--border2)}
+.exp-meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:.5rem}.exp-date{font-family:var(--font-mono);font-size:.72rem;color:var(--green);letter-spacing:.1em}.exp-badge{font-family:var(--font-mono);font-size:.65rem;background:var(--blue-dim);color:var(--blue);padding:.2rem .6rem;border-radius:3px;border:1px solid rgba(77,159,255,.2);letter-spacing:.08em;text-transform:uppercase}
+.exp-title{font-size:1.3rem;font-weight:700}.exp-company{font-family:var(--font-mono);font-size:.85rem;color:var(--muted);margin-bottom:.3rem}.exp-stack{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);margin-bottom:1rem}.exp-stack span{color:var(--green)}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem}.exp-bullets li{font-size:.9rem;color:var(--muted);padding-left:1.2rem;position:relative;line-height:1.7}.exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--green)}.exp-bullets li strong{color:var(--text)}
+#projects{background:var(--bg2)}.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.2rem}
+.project-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.8rem;transition:all .35s;position:relative;overflow:hidden}.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .35s}.project-card:hover{border-color:var(--border2);transform:translateY(-4px)}.project-card:hover::before{transform:scaleX(1)}
+.project-icon{width:42px;height:42px;background:var(--green-dim);border:1px solid var(--border2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem}.project-title{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}.project-desc{font-size:.87rem;color:var(--muted);line-height:1.7;margin-bottom:1.2rem}.project-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}.project-tag{font-family:var(--font-mono);font-size:.68rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:3px;padding:.15rem .5rem}.project-link{font-family:var(--font-mono);font-size:.75rem;color:var(--green);text-decoration:none;letter-spacing:.08em}
+#contact{background:var(--bg2)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}.contact-text p{color:var(--muted);line-height:1.9;margin-bottom:1.5rem}.contact-links{display:flex;flex-direction:column;gap:.8rem}.contact-link{display:flex;align-items:center;gap:1rem;padding:.8rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;text-decoration:none}.contact-link:hover{border-color:var(--border2);background:var(--surface2)}.contact-link-icon{width:32px;height:32px;background:var(--green-dim);border-radius:4px;display:flex;align-items:center;justify-content:center}.contact-link-text{flex:1}.contact-link-label{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}.contact-link-val{font-size:.88rem;color:var(--text)}
+.contact-form{display:flex;flex-direction:column;gap:1rem}.form-group{display:flex;flex-direction:column;gap:.4rem}.form-label{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}.form-input,.form-textarea{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.75rem 1rem;color:var(--text);font-family:var(--font-mono);font-size:.85rem;outline:none;resize:none}.form-input:focus,.form-textarea:focus{border-color:var(--border2)}.form-textarea{min-height:120px}.form-submit{background:var(--green);color:#000;border:none;padding:.8rem;border-radius:6px;font-family:var(--font-mono);font-size:.82rem;font-weight:700;letter-spacing:.08em;cursor:pointer}.form-submit:hover{background:var(--green2)}
+footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}.footer-text{font-family:var(--font-mono);font-size:.75rem;color:var(--muted);letter-spacing:.08em}.footer-text span{color:var(--green)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
+@media(max-width:768px){body{cursor:auto}#cursor,#cursor-ring{display:none}nav{padding:1rem 1.2rem}.nav-links{display:none}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}section{padding:4rem 0}.stats-row{grid-template-columns:1fr}.hero-name{font-size:clamp(3rem,16vw,5rem)}.projects-grid{grid-template-columns:1fr}.container{padding:0 1.2rem}}
+</style>
+</head>
+<body>
+<div id="cursor"></div><div id="cursor-ring"></div><div id="progress"></div>
+
+<nav>
+  <div class="nav-logo"><span>// </span>gaurav.dev</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:gauravmaheshwari59840@gmail.com" class="nav-cta">Let's Talk →</a>
+</nav>
+
+<section id="hero">
+  <div class="grid-bg"></div><div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag reveal">Available for opportunities</div>
+        <h1 class="hero-name reveal reveal-delay-1">Gaurav<br/><span class="highlight">Totla.</span></h1>
+        <p class="hero-role reveal reveal-delay-2"><span class="typed" id="typed-text">Lead Software Engineer</span><span class="t-cursor"></span></p>
+        <p class="hero-summary reveal reveal-delay-3">5+ years building scalable automation frameworks, secure backend services, REST APIs and reliable CI/CD pipelines with Python, testing and DevOps practices.</p>
+        <div class="hero-btns reveal reveal-delay-4"><a href="#experience" class="btn-primary">View My Work</a><a href="#contact" class="btn-secondary">Get In Touch</a></div>
+        <div class="hero-socials reveal reveal-delay-4">
+          <a href="https://in.linkedin.com/in/gaurav-totla-87306617a" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/GauravT-07Newsblog" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.hackerrank.com/profile/GauravTotla_CS" target="_blank" rel="noopener">HackerRank</a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="terminal">
+          <div class="terminal-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="terminal-title">gaurav@automation:~$</span></div>
+          <div class="terminal-body">
+            <div class="t-comment"># developer.py</div><br/>
+            <span class="t-key">class</span> <span class="t-val">GauravTotla</span>:<br/>
+            &nbsp;&nbsp;<span class="t-key">def</span> <span class="t-val">__init__</span>(self):<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;self.<span class="t-key">role</span> = <span class="t-str">"Lead Software Engineer"</span><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;self.<span class="t-key">experience</span> = <span class="t-num">5</span><span class="t-comment"> # years</span><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;self.<span class="t-key">location</span> = <span class="t-str">"Bangalore 🇮🇳"</span><br/><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;self.<span class="t-key">stack</span> = [<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Python"</span>, <span class="t-str">"FastAPI"</span>,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Robot Framework"</span>, <span class="t-str">"Selenium"</span>,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Jenkins"</span>, <span class="t-str">"Docker"</span>, <span class="t-str">"AWS"</span><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;]<br/><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;self.<span class="t-key">automation_first</span> = <span class="t-val">True</span> <span class="t-cursor"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-row reveal">
+      <div class="stat-item"><div class="stat-num">1,300+</div><div class="stat-label">Test Suites Orchestrated</div></div>
+      <div class="stat-item"><div class="stat-num">60%</div><div class="stat-label">Faster Regression Cycles</div></div>
+      <div class="stat-item"><div class="stat-num">90%+</div><div class="stat-label">Regression Coverage</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-header reveal"><div class="section-tag">// 01. about</div><h2 class="section-title">The engineer<br/>behind the <em>automation.</em></h2></div>
+        <div class="about-text reveal reveal-delay-1">
+          <p>I'm a <strong>Lead Software Engineer</strong> with 5+ years of experience building scalable automation solutions, backend services and CI/CD workflows across enterprise environments.</p>
+          <p>My core strength is combining <strong>Python-driven automation, backend engineering and DevOps</strong> to turn complex validation workflows into reliable, repeatable systems.</p>
+          <p>At Collins Aerospace, I've worked on distributed Linux environments, REST APIs, CI/CD optimization, infrastructure provisioning and large-scale test orchestration.</p>
+        </div>
+        <div class="cert-list reveal reveal-delay-2">
+          <div class="cert-item">AWS Certified Cloud Practitioner</div>
+          <div class="cert-item">Complete DevOps Ansible Automation Training</div>
+          <div class="cert-item">Linux Red Hat Certified System Administrator</div>
+          <div class="cert-item">Docker for the Absolute Beginner — Hands-on — DevOps</div>
+          <div class="cert-item">B.Tech in Computer Science — Arya Institute of Engineering and Technology, Jaipur</div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="terminal">
+          <div class="terminal-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="terminal-title">whoami.json</span></div>
+          <div class="terminal-body">
+            <span class="t-comment">{</span><br/>
+            &nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-str">"Gaurav Totla"</span>,<br/>
+            &nbsp;&nbsp;<span class="t-key">"title"</span>: <span class="t-str">"Lead Software Engineer"</span>,<br/>
+            &nbsp;&nbsp;<span class="t-key">"based_in"</span>: <span class="t-str">"Bangalore, India"</span>,<br/>
+            &nbsp;&nbsp;<span class="t-key">"experience_yrs"</span>: <span class="t-num">5+</span>,<br/>
+            &nbsp;&nbsp;<span class="t-key">"specialties"</span>: [<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Automation Frameworks"</span>,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Backend & REST APIs"</span>,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"CI/CD & DevOps"</span>,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Test Orchestration"</span><br/>
+            &nbsp;&nbsp;],<br/>
+            &nbsp;&nbsp;<span class="t-key">"currently"</span>: <span class="t-str">"Lead Software Engineer @ Collins Aerospace"</span>,<br/>
+            &nbsp;&nbsp;<span class="t-key">"automation_mindset"</span>: <span class="t-val">true</span><br/>
+            <span class="t-comment">}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;max-width:700px;margin:0 auto 3.5rem"><div class="section-tag">// 02. skills</div><h2 class="section-title">My technical <em>arsenal.</em></h2></div>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><div class="skill-card-title">Programming</div><div class="skill-tags"><span class="skill-tag primary">Python</span><span class="skill-tag">JavaScript</span><span class="skill-tag">C++</span><span class="skill-tag">Shell</span><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span></div></div>
+      <div class="skill-card reveal reveal-delay-1"><div class="skill-card-title">Automation & Testing</div><div class="skill-tags"><span class="skill-tag primary">Robot Framework</span><span class="skill-tag primary">Selenium</span><span class="skill-tag">PyTest</span><span class="skill-tag">Playwright</span><span class="skill-tag">Postman</span></div></div>
+      <div class="skill-card reveal reveal-delay-2"><div class="skill-card-title">Backend</div><div class="skill-tags"><span class="skill-tag primary">FastAPI</span><span class="skill-tag">Flask</span><span class="skill-tag">Django</span><span class="skill-tag">REST APIs</span><span class="skill-tag">API Integration</span></div></div>
+      <div class="skill-card reveal"><div class="skill-card-title">DevOps & Cloud</div><div class="skill-tags"><span class="skill-tag primary">Jenkins</span><span class="skill-tag primary">Docker</span><span class="skill-tag">Ansible</span><span class="skill-tag">AWS</span><span class="skill-tag">Git</span><span class="skill-tag">SVN</span></div></div>
+      <div class="skill-card reveal reveal-delay-1"><div class="skill-card-title">Databases & OS</div><div class="skill-tags"><span class="skill-tag primary">MySQL</span><span class="skill-tag">SQLAlchemy</span><span class="skill-tag">SQLite</span><span class="skill-tag">Linux</span></div></div>
+      <div class="skill-card reveal reveal-delay-2"><div class="skill-card-title">Engineering Practices</div><div class="skill-tags"><span class="skill-tag">CI/CD</span><span class="skill-tag">Regression Testing</span><span class="skill-tag">Test Orchestration</span><span class="skill-tag">QA</span><span class="skill-tag">Release Validation</span><span class="skill-tag">Gen AI / LLMs</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:3rem"><div class="section-tag">// 03. experience</div><h2 class="section-title">Where I've <em>shipped.</em></h2></div>
+    <div class="exp-timeline">
+      <div class="exp-item reveal">
+        <div class="exp-meta"><span class="exp-date">2021 — Present</span><span class="exp-badge">Current</span></div>
+        <div class="exp-title">Lead Software Engineer</div><div class="exp-company">Collins Aerospace · Bangalore</div>
+        <div class="exp-stack">Stack: <span>Python · Robot Framework · Selenium · Flask · FastAPI · Jenkins · Docker · Ansible · AWS · Linux</span></div>
+        <ul class="exp-bullets">
+          <li>Engineered scalable <strong>Python automation frameworks</strong> using Robot Framework, Selenium and Flask for reliable validation across distributed Linux environments.</li>
+          <li>Deployed applications on <strong>AWS EC2 with Nginx</strong>, configuring Linux servers, networking, permissions and backend process management.</li>
+          <li>Designed a Python orchestration tool to execute, analyze and consolidate <strong>1,300+ test suites</strong>, reducing regression cycles from ~10 days to 4 days and accelerating delivery by <strong>60%</strong>.</li>
+          <li>Architected secure <strong>Flask REST APIs</strong> to streamline automation workflows and reduce manual validation effort by <strong>50%</strong>.</li>
+          <li>Implemented end-to-end <strong>CI/CD pipelines using Jenkins, Docker and Git</strong> for unit, integration and UI testing.</li>
+          <li>Optimized pipelines through parallel execution and tuning, reducing total test runtime by <strong>40%</strong> while improving stability.</li>
+          <li>Automated <strong>300+ manual test cases</strong> and maintained <strong>800+ automated scenarios</strong>, increasing regression coverage beyond <strong>90%</strong>.</li>
+          <li>Authored <strong>Ansible playbooks</strong> to provision distributed Linux simulators, reducing environment setup from 3–4 hours to under 10 minutes.</li>
+          <li>Used <strong>Gen AI / LLMs</strong> to generate test scenarios, edge cases and test data, improving coverage and reducing manual test-design effort.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;max-width:700px;margin:0 auto 3.5rem"><div class="section-tag">// 04. projects</div><h2 class="section-title">Things I've <em>built.</em></h2></div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-icon">📰</div><div class="project-title">News Blog</div><div style="font-family:var(--font-mono);font-size:.7rem;color:var(--green);margin-bottom:.6rem">Live on PythonAnywhere</div>
+        <p class="project-desc">A Django-based full-stack news platform with secure authentication, content management, post creation and editing, dynamic commenting, and an ORM-driven backend.</p>
+        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Django</span><span class="project-tag">HTML</span><span class="project-tag">CSS</span><span class="project-tag">ORM</span><span class="project-tag">Live</span></div>
+        <a href="https://github.com/GauravT-07Newsblog" target="_blank" rel="noopener" class="project-link">GitHub →</a>&nbsp;&nbsp; <a href="https://gauravt.pythonanywhere.com/" target="_blank" rel="noopener" class="project-link">Live Demo →</a>
+      </div>
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-icon">🔗</div><div class="project-title">URL Shortener</div>
+        <p class="project-desc">A full-stack URL shortener built with React and Python, backed by SQLAlchemy and SQLite, with REST APIs for URL creation and deletion and AWS EC2 deployment behind Nginx.</p>
+        <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Python</span><span class="project-tag">SQLAlchemy</span><span class="project-tag">SQLite</span><span class="project-tag">REST API</span><span class="project-tag">AWS EC2</span><span class="project-tag">Nginx</span></div>
+        <a href="https://github.com/GauravT-07/URL_Shortner" target="_blank" rel="noopener" class="project-link">GitHub →</a>&nbsp;&nbsp; <a href="https://gauravt.pythonanywhere.com/" target="_blank" rel="noopener" class="project-link">Live Demo →</a>
+      </div>
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-icon">⚙️</div><div class="project-title">Test Orchestration Platform</div>
+        <p class="project-desc">A Python-based orchestration solution for executing, analyzing and consolidating 1,300+ test suites, cutting regression cycles from roughly 10 days to 4 days.</p>
+        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Robot Framework</span><span class="project-tag">CI/CD</span><span class="project-tag">Linux</span><span class="project-tag">Jenkins</span></div>
+        <a href="#experience" class="project-link">Read the impact →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;max-width:650px;margin:0 auto 3.5rem"><div class="section-tag">// 05. contact</div><h2 class="section-title">Let's <em>connect.</em></h2></div>
+    <div class="contact-grid">
+      <div class="contact-text reveal">
+        <p>I'm interested in opportunities where I can combine <strong>Python, automation, backend engineering and DevOps</strong> to build reliable systems and improve engineering velocity.</p>
+        <div class="contact-links">
+          <a href="mailto:gauravmaheshwari59840@gmail.com" class="contact-link"><div class="contact-link-icon">✉️</div><div class="contact-link-text"><div class="contact-link-label">Email</div><div class="contact-link-val">gauravmaheshwari59840@gmail.com</div></div></a>
+          <a href="tel:+919429931352" class="contact-link"><div class="contact-link-icon">📱</div><div class="contact-link-text"><div class="contact-link-label">Phone</div><div class="contact-link-val">+91 9429931352</div></div></a>
+          <a href="https://in.linkedin.com/in/gaurav-totla-87306617a" target="_blank" rel="noopener" class="contact-link"><div class="contact-link-icon">💼</div><div class="contact-link-text"><div class="contact-link-label">LinkedIn</div><div class="contact-link-val">Connect with me</div></div></a>
+          <a href="Resume_Gaurav_2026.pdf" class="contact-link"><div class="contact-link-icon">📑</div><div class="contact-link-text"><div class="contact-link-label">Resume</div><div class="contact-link-val">View / download my resume</div></div></a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <form class="contact-form" id="contactForm">
+          <div class="form-group"><label class="form-label">Name</label><input id="name" class="form-input" placeholder="Your name" required/></div>
+          <div class="form-group"><label class="form-label">Email</label><input id="email" type="email" class="form-input" placeholder="your@email.com" required/></div>
+          <div class="form-group"><label class="form-label">Message</label><textarea id="message" class="form-textarea" placeholder="Tell me about the role or opportunity..." required></textarea></div>
+          <button type="submit" class="form-submit">Open Email →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><p class="footer-text">Designed & built by <span>Gaurav Totla</span> · Lead Software Engineer · Bangalore, India</p></div></footer>
+
+<script>
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});
+function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)} animRing();
+document.querySelectorAll('a,button,.skill-card,.project-card,.exp-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2.5)';ring.style.opacity='0'});
+  el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';ring.style.opacity='.5'});
+});
+window.addEventListener('scroll',()=>{
+  const pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  document.getElementById('progress').style.width=pct+'%';
+});
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.1});
+reveals.forEach(r=>obs.observe(r));
+const roles=['Lead Software Engineer','Python Automation Engineer','Backend & API Engineer','CI/CD & DevOps Engineer'];
+let ri=0,ci=0,del=false;const typed=document.getElementById('typed-text');
+function type(){
+  const word=roles[ri];
+  if(!del){typed.textContent=word.slice(0,++ci);if(ci===word.length){del=true;setTimeout(type,1800);return}}
+  else{typed.textContent=word.slice(0,--ci);if(ci===0){del=false;ri=(ri+1)%roles.length}}
+  setTimeout(type,del?55:85)
+}
+setTimeout(type,900);
+window.addEventListener('scroll',()=>{
+  const sections=['hero','about','skills','experience','projects','contact'],links=document.querySelectorAll('.nav-links a');let current='';
+  sections.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-100)current=id});
+  links.forEach(l=>l.style.color=l.getAttribute('href')==='#'+current?'var(--green)':'var(--muted)');
+});
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=document.getElementById('name').value.trim(),email=document.getElementById('email').value.trim(),message=document.getElementById('message').value.trim();
+  const subject=encodeURIComponent('Portfolio enquiry from '+name);
+  const body=encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+  window.location.href=`mailto:gauravmaheshwari59840@gmail.com?subject=${subject}&body=${body}`;
+});
+</script>
+</body>
+</html>
